@@ -24,7 +24,7 @@ class EmplyoeeList extends Component {
                 </tbody>
             </table>)
         return (
-            <div  style={{width: '100%', height: '100vh',}} className={"employee_list"}>
+            <div style={{width: '100%', height: '100vh',}} className={"employee_list"}>
                 <h1>Employee List !!</h1>
                 <div style={{width: '90%'}}>{renderTable}</div>
             </div>
