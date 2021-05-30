@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import "./Login.css"
+import {Table, TableBody, TableCell, TableHead, TableRow} from "@material-ui/core";
 
 class EmplyoeeList extends Component {
     render() {
@@ -8,25 +9,25 @@ class EmplyoeeList extends Component {
         let dashboardData = this.props.dashboardData.login.dashboardData.user
         let headers = Object.keys(dashboardData[0])
         renderTable.push(
-            <table className={"employee"}>
-                <thead>
-                    <tr>{headers.map(label => {
-                        return (<th>{label}</th>)
+            <Table className={"employee"}>
+                <TableHead>
+                    <TableRow>{headers.map(label => {
+                        return (<TableCell>{label}</TableCell>)
                     })}
-                    </tr>
-                </thead>
-                <tbody>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
                     {dashboardData.map((employeeDetail, i) => {
-                        return (<tr>{headers.map(label => {
-                            return <td>{employeeDetail[label]}</td>
-                        })}</tr>)
+                        return (<TableRow>{headers.map(label => {
+                            return <TableCell>{employeeDetail[label]}</TableCell>
+                        })}</TableRow>)
                     })}
-                </tbody>
-            </table>)
+                </TableBody>
+            </Table>)
         return (
-            <div style={{width: '100%', height: '100vh',}} className={"employee_list"}>
+            <div className={"employee_list"}>
                 <h1>Employee List !!</h1>
-                <div style={{width: '90%'}}>{renderTable}</div>
+                <div>{renderTable}</div>
             </div>
         );
     }
