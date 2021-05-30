@@ -1,14 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import Snackbar from '@material-ui/core/Snackbar';
-import MuiAlert from '@material-ui/lab/Alert';
 
 import "./Login.css"
 import {Button} from "@material-ui/core";
-
-function Alert(props) {
-    return <MuiAlert elevation={6} variant="filled" {...props} />;
-}
 
 class Login extends Component {
     constructor(props) {
